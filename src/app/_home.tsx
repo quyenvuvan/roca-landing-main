@@ -3,25 +3,59 @@
 import Image from 'next/image';
 import { useState } from 'react';
 
+
 export default function Home() {
   const [form, setForm] = useState({ name: '', age: '', phone: '', schedule: '', description: '' });
   const [errors, setErrors] = useState<{ [k: string]: string }>({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (field: string, value: string) => {
     setForm(prev => ({ ...prev, [field]: value }));
     setErrors(prev => ({ ...prev, [field]: '' }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const newErrors: { [k: string]: string } = {};
     if (!form.name.trim()) newErrors.name = 'Tên là bắt buộc';
     if (!form.phone.trim()) newErrors.phone = 'Số điện thoại là bắt buộc';
     setErrors(newErrors);
     if (Object.keys(newErrors).length === 0) {
-      console.log('Đăng ký trải nghiệm:', form);
-      alert('Cám ơn, yêu cầu của bạn đã được ghi nhận.');
-      setForm({ name: '', age: '', phone: '', schedule: '', description: '' });
+      setIsSubmitting(true);
+      try {
+        const experienceData = {
+          name: form.name.trim(),
+          age: form.age.trim(),
+          phone: form.phone.trim(),
+          schedule: form.schedule,
+          description: form.description.trim(),
+          timestamp: new Date().toLocaleString('vi-VN', { timeZone: 'Asia/Ho_Chi_Minh' })
+        };
+
+        const response = await fetch('/api/send-experience-email', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(experienceData),
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+          console.log('Đăng ký trải nghiệm thành công:', form);
+          alert('Cám ơn, yêu cầu của bạn đã được ghi nhận và gửi đến đội ngũ tư vấn!');
+          setForm({ name: '', age: '', phone: '', schedule: '', description: '' });
+        } else {
+          console.error('Lỗi gửi email:', result.error);
+          alert('Có lỗi xảy ra khi gửi thông tin. Vui lòng thử lại hoặc liên hệ trực tiếp.');
+        }
+      } catch (error) {
+        console.error('Lỗi không mong muốn:', error);
+        alert('Có lỗi xảy ra. Vui lòng thử lại sau.');
+      } finally {
+        setIsSubmitting(false);
+      }
     }
   };
 
@@ -65,7 +99,9 @@ export default function Home() {
               <textarea value={form.description} onChange={(e) => handleChange('description', e.target.value)} className="w-full px-3 py-2 border rounded text-black" placeholder="Ví dụ: đau cổ vai gáy, đau lưng" rows={4} />
             </label>
 
-            <button type="submit" className="w-full bg-black text-white py-2 rounded hover:bg-gray-800 transition">Gửi đăng kí</button>
+            <button type="submit" disabled={isSubmitting} className="w-full bg-black text-white py-2 rounded hover:bg-gray-800 transition disabled:opacity-50 disabled:cursor-not-allowed">
+              {isSubmitting ? 'Đang gửi...' : 'Gửi đăng kí'}
+            </button>
           </form>
         </div>
       </section>

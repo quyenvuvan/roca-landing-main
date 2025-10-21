@@ -1,5 +1,8 @@
-# TODO: Make Image Touch Header
+# TODO: Integrate Email Sending for Experience Registration Form
 
-- [x] Update src/app/_home.tsx: Add absolute positioning to #brand-intro section (top: 0, left: 0, w-screen, h-screen, z-index: -1) to position image behind header
-- [x] Ensure figure inside section covers full viewport and image is visible behind header
-- [x] Verify layout: Image should touch/behind header without affecting functionality (dev server running at http://localhost:3001)
+## Tasks
+- [x] Add new interface `ExperienceData` in `src/lib/email.ts` for form fields (name, age, phone, schedule, description)
+- [x] Create new function `sendExperienceRegistrationEmail` in `src/lib/email.ts` to send email notifications for experience registrations
+- [x] Update form submit handler in `src/app/_home.tsx` to call the email function on successful validation
+- [x] Add proper error handling and user feedback in the form submit handler
+- [x] Test the email integration (ensure ADMIN_EMAILS is set in environment variables)
