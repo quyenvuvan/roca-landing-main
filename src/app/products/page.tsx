@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-export const PRODUCTS = [
+const PRODUCTS = [
    {
     "name": "Xịt XK VIMOS",
     "description": "Dùng xoa bóp hoặc massage ngoài da. Giúp làm ấm và nóng da nhanh chóng, góp phần đem lại cảm giác thoải mái, dễ chịu khi sử dụng.",
