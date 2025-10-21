@@ -1,0 +1,29 @@
+{
+  "rules": {
+    "recentSpins": {
+      ".read": true,
+      ".write": true
+    },
+    "pendingSpins": {
+      ".read": true,
+      ".write": true
+    },
+    "players": {
+      ".read": true,
+      ".write": true,
+      ".indexOn": ["lastSpinAt"]
+    },
+    "gameStats": {
+      ".read": true,
+      ".write": true
+    },
+    "prizesWon": {
+      ".read": true,
+      ".write": true
+    },
+    "gameSessions": {
+      ".read": true,
+      ".write": true
+    }
+  }
+} 
