@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { sendExperienceRegistrationEmail, ExperienceData } from '@/lib/email';
+import { GoogleSheetsExperienceService } from '@/lib/google-sheets-experience';
 
 // Add CORS headers
 function addCorsHeaders(response: NextResponse) {
@@ -73,6 +74,22 @@ export async function POST(request: NextRequest) {
 
     if (emailResult.success) {
       console.log('✅ Experience registration email sent successfully');
+
+      // Sync to Google Sheets after successful email send
+      try {
+        console.log('📊 Syncing experience registration to Google Sheets...');
+        const sheetsResult = await GoogleSheetsExperienceService.addExperienceRegistration(experienceData);
+
+        if (sheetsResult) {
+          console.log('✅ Experience registration synced to Google Sheets successfully');
+        } else {
+          console.warn('⚠️ Experience registration email sent but failed to sync to Google Sheets');
+        }
+      } catch (sheetsError) {
+        console.error('❌ Error syncing to Google Sheets:', sheetsError);
+        // Don't fail the request if sheets sync fails, just log it
+      }
+
       const successResponse = NextResponse.json({
         success: true,
         message: 'Email đã được gửi thành công',
