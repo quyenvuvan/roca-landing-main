@@ -1,9 +1,9 @@
 "use client";
 
-import { useEffect } from 'react';
+import { useEffect, Suspense } from 'react';
 import { usePathname, useSearchParams } from 'next/navigation';
 
-export default function ScrollToHash() {
+function ScrollToHashInner() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
@@ -21,4 +21,12 @@ export default function ScrollToHash() {
   }, [pathname, searchParams]);
 
   return null;
+}
+
+export default function ScrollToHash() {
+  return (
+    <Suspense fallback={null}>
+      <ScrollToHashInner />
+    </Suspense>
+  );
 }
