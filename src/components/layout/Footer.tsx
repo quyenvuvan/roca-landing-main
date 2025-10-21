@@ -24,7 +24,7 @@ export default function Footer() {
   };
 
   return (
-  <footer id="contact" className="bg-amber-800 text-white border-t border-amber-700 rounded-2xl">
+    <footer id="contact" className="bg-amber-800 text-white border-t border-amber-700 rounded-2xl">
       <div className="container mx-auto px-4 py-1 md:py-4">
         <div className="flex justify-center">
 
@@ -65,7 +65,7 @@ export default function Footer() {
             <div className="flex flex-col items-center justify-center">
               <h5 className="font-semibold text-white mb-2">Bản đồ</h5>
               <div className="w-full max-w-xs md:max-w-sm">
-                <iframe
+                {/* <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.1234!2d106.6833!3d20.8449!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x314a7b8b8b8b8b8b%3A0x1234567890abcdef!2sVimos+Mart+c%E1%BB%ADa+h%C3%A0ng+ti%E1%BB%87n+%C3%ADch+Dr+Giang!5e0!3m2!1sen!2s!4v1234567890!5m2!1sen!2s"
                   width="100%"
                   height="200"
@@ -75,7 +75,16 @@ export default function Footer() {
                   referrerPolicy="no-referrer-when-downgrade"
                   className="rounded-lg"
                   title="Location Map"
-                ></iframe>
+                ></iframe> */}
+                <div>
+                  <iframe
+                   className='w-full'
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d261.829380854493!2d106.32202684368255!3d20.950440969650913!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31359b67fd6aabfb%3A0x78ccd852e0eae529!2zMTMgSG_DoG5nIERp4buHdSwgUC4gQ-G6qW0gVGjGsOG7o25nLCBI4bqjaSBExrDGoW5nLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1761034067482!5m2!1svi!2s"
+                    // width="300"
+                    // height="200"
+                    loading="lazy"
+                  ></iframe>
+                  </div>
               </div>
               <p className="text-xs text-gray-300 mt-2 text-center">Nhấn vào bản đồ để xem chi tiết</p>
             </div>

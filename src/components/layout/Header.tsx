@@ -24,6 +24,9 @@ export default function Header() {
           <Link href="/combos" className="text-white hover:text-amber-100">
             Bộ sản phẩm
           </Link>
+          <Link href="/services" className="text-white hover:text-amber-100">
+            Dịch vụ
+          </Link>
           <Link href="/#contact" className="bg-black text-white px-4 py-2 rounded">
             Liên hệ
           </Link>
@@ -48,6 +51,9 @@ export default function Header() {
               </Link>
               <Link href="/combos" onClick={() => setIsOpen(false)} className="text-white">
                 Bộ sản phẩm
+              </Link>
+              <Link href="/services" onClick={() => setIsOpen(false)} className="text-white">
+                Dịch vụ
               </Link>
               <Link href="/#contact" onClick={() => setIsOpen(false)} className="text-white">
                 Liên hệ

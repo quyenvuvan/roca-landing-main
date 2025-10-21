@@ -62,13 +62,14 @@ export default function Home() {
   return (
     <main className="min-h-screen flex flex-col items-center" style={{ background: 'var(--background)' }}>
       {/* Hero: full viewport image directly under header */}
-  <figure className="relative w-full h-[40vh] md:h-[40vh] m-0 rounded-2xl overflow-hidden">
-        <Image src="/Screenshot 2025-10-20 160916.png" alt="Giới thiệu" fill className="object-cover md:object-cover object-contain object-center" priority />
-      </figure>
+      {/* <figure className="relative w-full h-[40vh] md:h-[40vh] m-0 rounded-2xl overflow-hidden"> */}
+        {/* <Image src="/Screenshot 2025-10-20 160916.png" alt="Giới thiệu" fill className="object-cover md:object-cover object-contain object-center" priority /> */}
+      {/* </figure> */}
+      <div className='w-full'><img className =" w-full"src='/Screenshot 2025-10-20 160916.png' /></div>
 
       {/* Registration form: centered card */}
       <section id="experience-form" className="w-full flex justify-center px-4 py-6 md:py-10">
-  <div className="w-full max-w-3xl rounded-xl shadow-xl p-4 md:p-6" style={{background: 'linear-gradient(135deg, #e6ffe6 60%, #fff 100%)'}}>
+        <div className="w-full max-w-3xl rounded-xl shadow-xl p-4 md:p-6" style={{ background: 'linear-gradient(135deg, #e6ffe6 60%, #fff 100%)' }}>
           <form onSubmit={handleSubmit} className="space-y-4">
             <h2 className="text-xl md:text-2xl font-bold text-center text-black">Đăng kí trải nghiệm</h2>
 
