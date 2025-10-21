@@ -16,12 +16,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Xuyên Việt Coop - Sản phẩm Việt - Giá Trị Việt | Duy Nhất Tại Hội Nghị",
-  description: "Xuyên Việt Coop - Sản phẩm Việt - Giá Trị Việt. Khám phá các sản phẩm chất lượng cao với ưu đãi đặc biệt. MUA 2 TẶNG 1 duy nhất tại hội nghị!",
-  keywords: "xuyên việt coop, sản phẩm việt, giá trị việt, cooperative, ưu đãi hội nghị, ocean park, sản phẩm chất lượng",
-  authors: [{ name: "Xuyên Việt Coop" }],
-  creator: "Xuyên Việt Coop",
-  publisher: "Xuyên Việt Coop",
+  title: "Vimos Mart cửa hàng tiện ích Dr Giang",
+  description: "Vimos Mart cửa hàng tiện ích Dr Giang. Khám phá các sản phẩm chất lượng cao với ưu đãi đặc biệt.",
+  keywords: "vimos mart, cửa hàng tiện ích, dr giang, sản phẩm chất lượng",
+  authors: [{ name: "Vimos Mart" }],
+  creator: "Vimos Mart",
+  publisher: "Vimos Mart",
   formatDetection: {
     email: false,
     address: false,
@@ -41,26 +41,26 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Xuyên Việt Coop - Sản phẩm Việt - Giá Trị Việt | Duy Nhất Tại Hội Nghị",  
-    description: "Xuyên Việt Coop - Sản phẩm Việt - Giá Trị Việt. Khám phá các sản phẩm chất lượng cao với ưu đãi đặc biệt. MUA 2 TẶNG 1 duy nhất tại hội nghị!",
+    title: "Vimos Mart cửa hàng tiện ích Dr Giang",
+    description: "Vimos Mart cửa hàng tiện ích Dr Giang. Khám phá các sản phẩm chất lượng cao với ưu đãi đặc biệt.",
     type: "website",
     locale: "vi_VN",
-    url: "https://xuyenvietcoop.vn",
-    siteName: "Xuyên Việt Coop",
+    url: "https://vimosmart.vn",
+    siteName: "Vimos Mart",
     images: [
       {
-        url: "https://xuyenvietcoop.vn/og-image.jpg",
+        url: "https://vimosmart.vn/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Xuyên Việt Coop - Sản phẩm Việt - Giá Trị Việt",
+        alt: "Vimos Mart cửa hàng tiện ích Dr Giang",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Xuyên Việt Coop - Sản phẩm Việt - Giá Trị Việt",
-    description: "Sản phẩm Việt - Giá Trị Việt duy nhất tại hội nghị Ocean Park 1",
-    images: ["https://xuyenvietcoop.vn/og-image.jpg"],
+    title: "Vimos Mart cửa hàng tiện ích Dr Giang",
+    description: "Vimos Mart cửa hàng tiện ích Dr Giang",
+    images: ["https://vimosmart.vn/og-image.jpg"],
   },
   verification: {
     google: "your-google-verification-code",
