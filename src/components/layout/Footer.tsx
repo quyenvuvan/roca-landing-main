@@ -23,17 +23,17 @@ export default function Footer() {
   };
 
   return (
-  <footer id="contact" className="bg-amber-800 text-white border-t border-amber-700 rounded-2xl ">
-      <div className="container mx-auto px-4 py-1">
+  <footer id="contact" className="bg-amber-800 text-white border-t border-amber-700 rounded-2xl">
+      <div className="container mx-auto px-4 py-4 md:py-8">
         <div className="flex justify-center">
 
           {/* Contact Info */}
           <div className="flex flex-col items-center text-center justify-center mx-auto max-w-md w-full">
-            <h4 className="font-bold text-xl mb-6 text-white">Thông Tin Liên Hệ</h4>
-            <ul className="space-y-4 text-base">
-              <li className="text-gray-300 flex items-center justify-center space-x-2">
+            <h4 className="font-bold text-lg md:text-xl mb-4 md:mb-6 text-white">Thông Tin Liên Hệ</h4>
+            <ul className="space-y-3 md:space-y-4 text-sm md:text-base">
+              <li className="text-gray-300 flex flex-col md:flex-row items-center justify-center space-y-1 md:space-y-0 md:space-x-2">
                 <span className="text-blue-400">📍</span>
-                <span>Số 1 ngõ 13 Hoàng Diệu - Thành Đông - Hải Phòng</span>
+                <span className="text-center md:text-left">Số 1 ngõ 13 Hoàng Diệu - Thành Đông - Hải Phòng</span>
               </li>
               <li className="text-gray-300 flex items-center justify-center space-x-2">
                 <span className="text-blue-400">📞</span>

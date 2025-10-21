@@ -8,9 +8,9 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-  <header className="bg-amber-800 rounded-2xl">
+  <header className="relative bg-amber-800 rounded-2xl">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-        <Link href="/" className="font-bold text-xl text-white">
+        <Link href="/" className="font-bold text-lg md:text-xl text-white">
           Vimos Mart cửa hàng tiện ích Dr Giang
         </Link>
 
@@ -38,7 +38,7 @@ export default function Header() {
         </button>
 
         {isOpen && (
-          <div className="md:hidden absolute left-0 right-0 bg-amber-700/80 border-t mt-16">
+          <div className="md:hidden absolute top-full left-0 right-0 bg-amber-700/80 border-t z-50">
             <nav className="flex flex-col p-4 space-y-2">
               <Link href="/" onClick={() => setIsOpen(false)} className="text-white">
                 Trang chủ
