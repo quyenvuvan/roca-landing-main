@@ -136,19 +136,7 @@ export default function CombosPage() {
                   );
                 })}
               </div>
-              <div className="mt-6 flex flex-col items-end">
-                <div className="mb-2 text-right">
-                  <span className="text-gray-700">Tổng giá: </span>
-                  <span className="font-bold text-lg text-black">{total.toLocaleString('vi-VN')}₫</span>
-                </div>
-                <div className="mb-2 text-right">
-                  <span className="text-gray-700">Giảm giá 5%: </span>
-                  <span className="font-bold text-lg text-green-700">-{discount.toLocaleString('vi-VN')}₫</span>
-                </div>
-                <button className="bg-black text-white px-6 py-2 rounded font-bold text-lg hover:bg-gray-800 transition">
-                  Mua ({finalPrice.toLocaleString('vi-VN')}₫)
-                </button>
-              </div>
+              
             </section>
           );
         })}
