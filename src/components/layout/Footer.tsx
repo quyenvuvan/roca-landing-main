@@ -42,7 +42,7 @@ export default function Footer() {
               </li>
               <li className="text-gray-300 flex items-center justify-center space-x-2">
                 <span className="text-blue-400">🕒</span>
-                <span>10:00 - 22:00 hàng ngày</span>
+                <span>08:00 - 22:00 hàng ngày</span>
               </li>
             </ul>
           </div>
